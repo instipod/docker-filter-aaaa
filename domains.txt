@@ -1,0 +1,52 @@
+# AAAA filter list
+#
+# Domains listed here will return NODATA for AAAA queries, causing clients to
+# fall back to IPv4 via Happy Eyeballs. Subdomains are automatically covered
+# (adding netflix.com also filters www.netflix.com, api.netflix.com, etc.).
+#
+# Lines starting with # are comments. Inline comments are also supported.
+# Example:
+#   hbomax.com
+#   hbomax.com  # inline comment
+#
+# To apply changes: docker compose restart
+
+# Netflix
+netflix.com
+nflxvideo.net          # Netflix CDN (video delivery)
+nflximg.net            # Netflix CDN (images/UI)
+nflxext.com            # Netflix CDN (extensions/assets)
+
+# Hulu
+hulu.com
+hulustream.com         # Hulu video delivery
+hulufudge.com          # Hulu ad/tracking CDN
+
+# Disney+
+disneyplus.com
+disney-plus.net        # Disney+ CDN
+dssott.com             # Disney streaming platform backend (Star/Hotstar/D+)
+bamgrid.com            # Disney streaming infrastructure (BAMTech)
+
+# Max (HBO Max)
+max.com
+hbomax.com             # Legacy HBO Max domain still in use
+hbo.com
+warnermediacdn.com     # WarnerMedia CDN
+
+# Peacock (NBCUniversal)
+peacocktv.com
+peacockprod.akamaized.net  # Peacock Akamai CDN
+
+# Paramount+
+paramountplus.com
+cbsnews.com            # Shared CBS/Paramount infrastructure
+cbs.com
+
+# Amazon Prime Video
+primevideo.com
+aiv-cdn.net            # Amazon Instant Video CDN
+
+# ESPN / ESPN+
+espn.com
+espnplus.com

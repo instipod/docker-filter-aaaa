@@ -1,0 +1,13 @@
+services:
+  dns-filter:
+    build: .
+    container_name: dns-filter
+    volumes:
+      - ./domains.txt:/etc/coredns/domains.txt:ro
+    environment:
+      # Space-separated list of upstream resolvers
+      UPSTREAMS: "8.8.8.8 1.1.1.1"
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+    restart: unless-stopped
