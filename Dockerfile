@@ -1,6 +1,6 @@
-FROM coredns/coredns:1.11.3 AS coredns
+FROM coredns/coredns:1.14.4 AS coredns
 
-FROM alpine:3.20
+FROM alpine:3.24
 
 # Pull the statically-linked CoreDNS binary out of the scratch-based image
 COPY --from=coredns /coredns /coredns
